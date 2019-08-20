@@ -1,0 +1,54 @@
+@import "../../scss/colors";
+
+form {
+  position: relative;
+}
+
+input {
+  width: 100%;
+  background: white;
+  border: 0;
+  border-top: 1px solid $light;
+  padding: 1.2rem 4rem 1.2rem 1.2rem;
+  box-sizing: border-box;
+  transition: border 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+  &:focus {
+    outline: 0;
+    border-top: 1px solid $primary;
+  }
+}
+
+button[type="submit"] {
+  position: absolute;
+  right: 1.2rem;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  top: calc(50% - 1.2rem);
+  border: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  transition: background-color 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+
+  &:focus,
+  &:hover {
+    background: rgba(220, 220, 220, 0.4);
+    outline: none;
+  }
+
+  svg {
+    fill: $primary;
+    transition: fill 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+  }
+
+  &:disabled {
+    background: transparent;
+
+    svg {
+      fill: $primary-text;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import "../scss/colors";
+@import "../scss/media";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &:first-child {
+    border-bottom: 1px solid $light;
+  }
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    &:first-child {
+      border-bottom: 0;
+      border-right: 1px solid $light;
+    }
+  }
+}

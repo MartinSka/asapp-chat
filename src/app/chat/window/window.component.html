@@ -1,0 +1,35 @@
+<!-- Messages List Container -->
+<div #scrollMe
+     class="message__list"
+     [scrollTop]="scrollMe.scrollHeight">
+
+  <!-- Message -->
+  <p [@fadeInOut]
+     class="message"
+     *ngFor="let message of messages; trackBy:getMessageTimestamp"
+     [class.message--user]="message.sentBy === senderId">
+
+    <ng-container [ngSwitch]="messageIs(message.content)">
+
+      <!-- Render an Image -->
+      <img *ngSwitchCase="'image'"
+           [src]="message.content"
+           (load)="scrollMe.scrollBy(scrollMe.scrollHeight, 0)">
+
+      <!-- Render an Anchor  -->
+      <a *ngSwitchCase="'anchor'"
+         [href]="message.content"
+         target="_blank">{{ message.content }}</a>
+
+      <!-- Render text -->
+      <span class="message__content"
+            *ngSwitchDefault>{{ message.content }}</span>
+
+    </ng-container>
+
+    <!-- Message hour -->
+    <span class="message__hour">
+      {{ message.timestamp | date: 'shortTime' }}
+    </span>
+
+  </p>

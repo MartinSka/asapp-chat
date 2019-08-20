@@ -1,0 +1,33 @@
+<header class="user">
+
+  <!-- Chevron Icon -->
+  <img alt="Back to contact list"
+       loading="lazy"
+       src="assets/icons/chevron_left.svg">
+
+  <!-- User avatar image -->
+  <img class="user__avatar"
+       loading="lazy"
+       [alt]="user.name + '\'s avatar'"
+       [src]="'assets/avatars/' + user.name + '.jpg'">
+
+  <!-- User name and state -->
+  <h2 class="user__name">
+    {{ user.name }}
+
+    <!-- User state (Typing or Active) -->
+    <span class="user__state">
+
+      <ng-container *ngIf="getUserTyping(typing); else userActive; let userTyping">
+        {{ userTyping.name }} is typing...
+      </ng-container>
+
+      <ng-template #userActive>
+        Active
+      </ng-template>
+
+    </span>
+
+  </h2>
+
+</header>

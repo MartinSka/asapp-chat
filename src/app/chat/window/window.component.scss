@@ -1,0 +1,56 @@
+@import "../../scss/colors";
+
+:host {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.message {
+  background: $light-grey;
+  box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  color: $primary-text;
+  padding: 8px;
+  display: inline-block;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  &--user {
+    align-self: flex-end;
+    background-color: $accent;
+    color: white;
+  }
+
+  &__list {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 1rem;
+  }
+
+  &__content,
+  a {
+    display: block;
+    overflow-wrap: break-word;
+  }
+
+  &__hour {
+    font-size: 10px;
+    color: $light;
+    text-align: right;
+    width: 100%;
+    display: inline-block;
+  }
+}

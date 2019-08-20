@@ -1,0 +1,15 @@
+<ng-container *ngIf="store.state$ | async as state">
+
+  <!-- HEADER -->
+  <app-header [typing]="state.chats[chatId].typing"
+                [user]="receiverUser"></app-header>
+
+  <!-- CHAT WINDOW -->
+  <app-window [senderId]="senderId"
+                [messages]="state.chats[chatId].messages"></app-window>
+
+  <!-- CHAT INPUT -->
+  <app-input [senderId]="senderId"
+               [chatId]="chatId"></app-input>
+
+</ng-container>

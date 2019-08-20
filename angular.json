@@ -3,11 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "asapp-chat": {
+    "app-chat": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "asapp",
+      "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
           "style": "sass"
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/asapp-chat",
+            "outputPath": "dist/app-chat",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "asapp-chat:build"
+            "browserTarget": "app-chat:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "asapp-chat:build:production"
+              "browserTarget": "app-chat:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "asapp-chat:build"
+            "browserTarget": "app-chat:build"
           }
         },
         "test": {
@@ -107,7 +107,7 @@
         }
       }
     },
-    "asapp-chat-e2e": {
+    "app-chat-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "asapp-chat:serve"
+            "devServerTarget": "app-chat:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "asapp-chat:serve:production"
+              "devServerTarget": "app-chat:serve:production"
             }
           }
         },
@@ -136,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "asapp-chat"
+  "defaultProject": "app-chat"
 }

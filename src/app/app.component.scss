@@ -1,0 +1,11 @@
+@import "./scss/media.scss";
+
+:host {
+  display: grid;
+  grid-auto-rows: 1fr 1fr;
+  height: 100vh;
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
